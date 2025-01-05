@@ -26,14 +26,14 @@ def generate_response(query, contexts):
     Question: {query}
     Context:
     {combined_context}
-    Answer the question based on the provided context. Avoid repeating phrases and ensure the response is well-elaborated and unique. Consider previous answers and avoid duplicating them.
+    Answer the question based on the provided context. Avoid repeating phrases and ensure the response is well-elaborated and unique. Consider previous answers and avoid duplicating them. Keep the responses concise and not too long.
     Previous Responses:
     {previous_responses_text}
     """
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": "You are a helpful assistant. Your name is ChatterBox"},
+            {"role": "system", "content": "You are a helpful assistant. Your name is ChatterBox. You will answer questions for me about my Resume, my name is Sean"},
             {"role": "user", "content": prompt}
         ],
         max_tokens=300,
