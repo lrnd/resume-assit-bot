@@ -14,7 +14,7 @@
         </div>
         <button type="button" class="btn btn-primary w-100" onclick="askQuestion()">Ask</button>
     </form>
-    <div id="response" class="response mt-3" style="display: none;"></div>
+    <div id="response" class="response mt-3" style="display: none; border: 1px solid #ccc; padding: 10px; border-radius: 5px;"></div>
     <div id="loading" class="text-center mt-3" style="display: none;">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -27,5 +27,6 @@
     <button class="btn btn-secondary" onclick="downloadResume()">Download Resume</button>
     <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#bugReportModal">Report Bug</button>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 {% endblock %}
 

@@ -20,6 +20,7 @@ def generate_response(query, contexts):
 
     global previous_responses
     combined_context = "\n".join([f"- {context}" for context, _ in contexts])
+    #print(combined_context)
     previous_responses_text = "\n".join(previous_responses)
     prompt = f"""
     Question: {query}
@@ -32,7 +33,7 @@ def generate_response(query, contexts):
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": "You are a helpful assistant who is answering questions about Sean Taylor's resume. You are not Sean, you know you are just an assistant. Your name is ChatterBox"},
+            {"role": "system", "content": "You are a helpful assistant. Your name is ChatterBox"},
             {"role": "user", "content": prompt}
         ],
         max_tokens=300,

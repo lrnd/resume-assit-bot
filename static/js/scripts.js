@@ -23,7 +23,7 @@ async function askQuestion() {
         loadingDiv.style.display = "none";
         if (data.response) {
             responseDiv.style.display = "block";
-            responseDiv.innerHTML = `<strong>Answer:</strong> ${data.response}`;
+            responseDiv.innerHTML = marked.parse(data.response);
         } else if (data.error) {
             responseDiv.style.display = "block";
             responseDiv.innerHTML = `<strong>Error:</strong> ${data.error}`;
