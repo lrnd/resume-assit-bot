@@ -20,7 +20,7 @@ The system calculates cosine similarity between the query embedding and all the 
 The top 3 most relevant chunks are selected to create context.
 
 ## Generating Answers
-The selected chunks and the user query are sent to the OpenAI GPT model (e.g., gpt-4) to generate a detailed, context-aware response.
+The selected chunks and the user query are sent to the OpenAI GPT model (gpt-4o-mini) to generate a detailed, context-aware response.
 
 # Updating the summary.json
 in the tools folder there is a python script "chunkify-docx.py" which when run
