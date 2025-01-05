@@ -1,8 +1,15 @@
 from openai import OpenAI
 from docx import Document
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Set up OpenAI API key
-client = OpenAI(api_key="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")
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("OPENAI_API_KEY not found in environment variables.")
+client = OpenAI(api_key=api_key)
 
 model = "gpt-4o-mini"
 PRICING_PER_1M_TOKENS = {
