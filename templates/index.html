@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Sean's Resume ChatterBox{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Sean's Resume ChatterBox</h1>
+<p class="text-muted text-center">Ask questions about my resume and have chaterbox here answer for me.</p>
+
+<div class="chat-box">
+    <form id="qa-form">
+        <div class="mb-3">
+            <label for="query" class="form-label">Ask a Question</label>
+            <textarea id="query" name="query" class="form-control" rows="4" placeholder="Type your question here..."></textarea>
+        </div>
+        <button type="button" class="btn btn-primary w-100" onclick="askQuestion()">Ask</button>
+    </form>
+    <div id="response" class="response mt-3" style="display: none;"></div>
+    <div id="loading" class="text-center mt-3" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+
+<div class="buttons mt-4 d-flex justify-content-between">
+    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#helpModal">About</button>
+    <button class="btn btn-secondary" onclick="downloadResume()">Download Resume</button>
+    <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#bugReportModal">Report Bug</button>
+</div>
+{% endblock %}
+

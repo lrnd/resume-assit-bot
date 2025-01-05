@@ -1,0 +1,71 @@
+{
+    "Name": "Sean Taylor",
+    "Email": "seanphilliptaylor@gmail.com",
+    "linkdin": "https://www.linkedin.com/in/sean-taylor-27096b1a3/",
+    "Profile": "Experienced robotics engineer skilled in designing, developing, and deploying robotics systems and automation solutions. Quick learner with a passion for engineering and software.",
+    "Education": {
+        "University of Technology Sydney": {
+            "Degree": "Bachelor of Engineering (1st class honours), major in Mechatronics",
+            "Years": "2015 - 2020"
+        },
+        "Bachelor of Arts": "International Studies (Chile)"
+    },
+    "Experience": {
+        "Abyss Solutions": {
+            "Position": "Senior Robotics Engineer",
+            "Years": "2023 – current",
+            "Responsibilities": [
+                "Software development in Python and ROS/ROS2",
+                "System and process design",
+                "Testing and maintaining deployed systems"
+            ],
+            "Contributions": [
+                "Developed software stack for Thames Tideway Tunnels inspection system",
+                "Ported software from ROS to ROS 2",
+                "Designed automated processing pipeline for 3D mesh production"
+            ]
+        },
+        "University of Technology Sydney": {
+            "Position": "Senior Technical Officer",
+            "Years": "2022 – 2023",
+            "Responsibilities": [
+                "Software development in C++ for ROS",
+                "Systems integration and testing",
+                "Mechatronic design"
+            ],
+            "Contributions": [
+                "Developed control stack for Fast Off Road Vehicle",
+                "Led implementation of robust start-up procedure",
+                "Assisted with automated wool skirting machine project"
+            ]
+        },
+        "Kalmar Global": {
+            "Position": "Machine Automation Engineer - cargo-handling",
+            "Years": "2019 – 2022",
+            "Responsibilities": [
+                "Software development in C and C++",
+                "Testing and troubleshooting",
+                "Client liaison"
+            ],
+            "Contributions": [
+                "Developed control software for Rail Management System",
+                "Created lightweight simulator for AutoStrads™",
+                "Implemented unit test framework for RMS"
+            ]
+        }
+    },
+    "Skills": [
+        "Robotic software development",
+        "Firmware development",
+        "System design",
+        "AI/ML integration",
+        "Communication interfaces",
+        "Teamwork",
+        "Troubleshooting"
+    ],
+    "Projects": [
+        "Thames Tideway Tunnels inspection system",
+        "Fast Off Road Vehicle control stack",
+        "Rail Management System automation"
+    ]
+}
