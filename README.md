@@ -31,5 +31,5 @@ meaning. This is done to reduce cost when running the bot.
 
 # TODO:
 * support pdf format
-* produces embeddings now, rather then dynamically on each function call (cheaper)
+* produces static embeddigs for summary rather then on each load
 

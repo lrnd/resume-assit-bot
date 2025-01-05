@@ -3,7 +3,7 @@ import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from utils.embeddings import find_similar_chunks
 from utils.responses import generate_response
 from utils.summary import initialise_summary
@@ -16,20 +16,51 @@ EMAIL_USERNAME = os.getenv("EMAIL_USERNAME")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
 RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL", EMAIL_USERNAME)
 
+PASSWORD = os.getenv("ACCESS_PASSWORD", "securepassword")  # Set this in your .env file
+
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY", "default-secret-key")  # Ensure this is set securely
 
 # initialise summary and embeddings
 summary, summary_chunks, summary_embeddings = initialise_summary()
 
 @app.route('/')
+def login():
+    """Render the login page."""
+    if 'authenticated' in session:
+        return redirect(url_for('home'))
+    return render_template('login.html')
+
+@app.route('/login', methods=['POST'])
+def authenticate():
+    """Authenticate the user."""
+    password = request.form.get("password")
+    if password == PASSWORD:
+        session['authenticated'] = True
+        return redirect(url_for('home'))
+    else:
+        return render_template('login.html', error="Invalid password")
+
+#@app.route('/logout')
+#def logout():
+#    """Log the user out."""
+#    session.pop('authenticated', None)
+#    return redirect(url_for('login'))
+
+@app.route('/home')
 def home():
-    ''' Render the home page '''
+    """Render the chatbot interface."""
+    if 'authenticated' not in session:
+        return redirect(url_for('login'))
     return render_template('index.html')
 
 @app.route('/ask', methods=['POST'])
 def ask_question():
-    ''' Handle a question and return answer '''
-    print("handling question")
+    """Handle the chatbot queries."""
+
+    if 'authenticated' not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+
     data = request.get_json()
     query = data.get("query", "").strip()
     if not query:
@@ -42,6 +73,10 @@ def ask_question():
 @app.route('/report-bug', methods=['POST'])
 def report_bug():
     """Handle bug report submission and send it via email."""
+
+    if 'authenticated' not in session:
+        return jsonify({"error": "Unauthorized"}), 401
+
     data = request.get_json()
     description = data.get("description", "").strip()
 
