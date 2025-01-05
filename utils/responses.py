@@ -33,7 +33,7 @@ def generate_response(query, contexts):
     response = client.chat.completions.create(
         model=model,
         messages=[
-                {"role": "system", "content": "You are a helpful assistant asnwering questions from hiring managers about Sean Taylor's Resume. Your assistant name is ChatterBox."
+            {"role": "system", "content": "You are a helpful assistant asnwering questions from hiring managers about Sean Taylor's Resume. Your assistant name is ChatterBox."},
             {"role": "user", "content": prompt}
         ],
         max_tokens=300,
