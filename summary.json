@@ -2,7 +2,7 @@
     "Name": "Sean Taylor",
     "Email": "seanphilliptaylor@gmail.com",
     "linkdin": "https://www.linkedin.com/in/sean-taylor-27096b1a3/",
-    "Profile": "Experienced robotics engineer skilled in designing, developing, and deploying robotics systems and automation solutions. Quick learner with a passion for engineering and software.",
+    "Profile": "Experienced robotics engineer skilled in designing, developing, and deploying robotics systems and automation solutions. Quick learner and problem solver with a passion for engineering and software.",
     "Education": {
         "University of Technology Sydney": {
             "Degree": "Bachelor of Engineering (1st class honours), major in Mechatronics",
@@ -17,12 +17,14 @@
             "Responsibilities": [
                 "Software development in Python and ROS/ROS2",
                 "System and process design",
-                "Testing and maintaining deployed systems"
+                "Testing and maintaining deployed systems",
+                "Guiding robotics vision"
             ],
             "Contributions": [
-                "Developed software stack for Thames Tideway Tunnels inspection system",
+                "Development for the Thames Tideway Tunnels inspection system",
                 "Ported software from ROS to ROS 2",
-                "Designed automated processing pipeline for 3D mesh production"
+                "Designed automated processing pipeline for 3D mesh production",
+                "CI/CD of tech stack"
             ]
         },
         "University of Technology Sydney": {
@@ -34,8 +36,8 @@
                 "Mechatronic design"
             ],
             "Contributions": [
-                "Developed control stack for Fast Off Road Vehicle",
-                "Led implementation of robust start-up procedure",
+                "Developed control stack for Fast Off Road Vehicle (FORV) project",
+                "Led implementation of robust start-up procedure for multi-system robot (FORV)",
                 "Assisted with automated wool skirting machine project"
             ]
         },
@@ -45,11 +47,12 @@
             "Responsibilities": [
                 "Software development in C and C++",
                 "Testing and troubleshooting",
-                "Client liaison"
+                "Client liaison",
+                "SME for Rail Management System (RMS)"
             ],
             "Contributions": [
                 "Developed control software for Rail Management System",
-                "Created lightweight simulator for AutoStrads™",
+                "Created lightweight simulator for AutoStrads in Gazebo™",
                 "Implemented unit test framework for RMS"
             ]
         }
@@ -64,8 +67,26 @@
         "Troubleshooting"
     ],
     "Projects": [
-        "Thames Tideway Tunnels inspection system",
-        "Fast Off Road Vehicle control stack",
-        "Rail Management System automation"
+        {
+            "Name": "Thames Tideway Tunnels inspection system",
+            "Details": {
+                "Description": "A system designed for the autonomous inspection of the Thames Tideway Tunnels. Navigating over 7km long tunnel sections and capturing high resolution data. R&D initiative",
+                "Technologies": ["Robotics", "Computer Vision", "Automation", "Data Processing"]
+            }
+        },
+        {
+            "Name": "Fast Off Road Vehicle",
+            "Details": {
+                "Description": "Development of a control stack for high-speed autonomous off-road vehicle. Implementing a full suite of sensors including LIDAR, IMU, GPS, Camera, Multisense, Encoders",
+                "Technologies": ["Control Systems", "Sensor Fusion", "PLC", "Firmware", "Communication interfaces"]
+            }
+        },
+        {
+            "Name": "Rail Management System",
+            "Details": {
+                "Description": "Automation of rail management operations for enhanced efficiency and safety at Patricks Autostrad Terminal Sydney.",
+                "Technologies": ["Automation", "Control", "Planning algorithms", "System intergration"]
+            }
+        }
     ]
 }
