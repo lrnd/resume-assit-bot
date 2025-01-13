@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Admin</h1>
+    <p><a href="/admin/logout">Log out</a></p>
+
+    <h2>Upload New Resume</h2>
+    <form method="POST" action="/admin/upload_resume" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <h2>Download Database</h2>
+    <a href="/admin/download_db">Download Database Snapshot</a>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li style="color: green;">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</body>
+</html>
+
