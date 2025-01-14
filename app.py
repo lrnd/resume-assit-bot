@@ -78,7 +78,6 @@ def ask_question():
     if 'authenticated' not in session:
         return jsonify({"error": "Unauthorized"}), 401
 
-    global query_count
     user_id = request.remote_addr
     data = request.get_json()
     query = data.get("query", "").strip()
@@ -89,8 +88,6 @@ def ask_question():
     response = generate_response(query, top_contexts)
 
     log_conversation(user_id, query, response)
-
-    query_count += 1
 
     return jsonify({"response": response})
 
