@@ -3,6 +3,7 @@
     "Email": "seanphilliptaylor@gmail.com",
     "linkdin": "https://www.linkedin.com/in/sean-taylor-27096b1a3/",
     "Profile": "Experienced robotics engineer skilled in designing, developing, and deploying robotics systems and automation solutions. Quick learner and problem solver with a passion for engineering and software.",
+    "Location": "Currently based in Australia. Moving to the UK (Manchester) in March. Visa is already sorted (Youth Mobility scheme)",
     "Education": {
         "University of Technology Sydney": {
             "Degree": "Bachelor of Engineering (1st class honours), major in Mechatronics",
@@ -57,6 +58,14 @@
             ]
         }
     },
+    "Software Languages": [
+        "Cpp",
+        "C",
+        "python",
+        "Lisp",
+        "Bash",
+        "Structured Text"
+    ],
     "Skills": [
         "Robotic software development",
         "Firmware development",
