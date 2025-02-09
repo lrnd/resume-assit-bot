@@ -34,13 +34,17 @@ def admin_required(f):
 
 @app.route('/')
 def login():
+    # remove password login for now
+    session['authenticated'] = True
+    return redirect(url_for('home'))
     """Render the login page."""
     if 'authenticated' in session:
         return redirect(url_for('home'))
     return render_template('login.html')
 
 
-@app.route('/login', methods=['POST'])
+#@app.route('/login', methods=['POST'])
+@app.route('/login', methods=['POST', 'GET'])
 def authenticate():
     """Authenticate the user."""
     password = request.form.get("password")
